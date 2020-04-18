@@ -22,3 +22,11 @@ Route::get('profile', 'API\UserController@profile');
 Route::get('findUser', 'API\UserController@search');
 Route::put('profile', 'API\UserController@updateProfile');
 
+Route::post('login', 'API\Auth\AuthController@login');
+Route::post('register', 'API\Auth\AuthController@register');
+
+Route::group(['middleware' => 'auth:api'], function(){
+Route::post('details', 'API\Auth\AuthController@details');
+
+});
+

@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use Validator;
 
 
 class UserController extends Controller
 {
+    public $successStatus = 200;
 
     /**
      * Create a new controller instance.
@@ -173,4 +175,7 @@ class UserController extends Controller
         return $users;
 
     }
+
+
+    
 }
